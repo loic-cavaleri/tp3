@@ -192,10 +192,10 @@ Parfois, une propriété dépend d'une autre mais avec une relation plus complex
 Deux techniques (dites de "haut-niveau") sont à disposition (elles peuvent être combinées) :
 
    - Utiliser la classe utilitaire `Bindings` qui possède de nombreuses méthodes statiques permettant d'effectuer des 
-   opérations impliquant un ou plusieurs objets observables (dont les propriétés)
+   opérations impliquant un ou plusieurs objets observables (dont les propriétés). Par exemple, `Bindings.multiply(unePropriete, autrePropriete)`.
 
    - Utiliser les méthodes disponibles dans les classes qui représentent les propriétés; ces méthodes peuvent être 
-   chaînées (Fluent API).
+   chaînées (Fluent API). Par exemple, `unePropriete.multiply(autrePropriete)`.
 
 Des opérations de conversions sont parfois nécessaires si le type des propriétés à lier n'est pas le même. Par exemple 
 pour lier un champ texte (`StringProperty`) à un slider dont la valeur est numérique (`DoubleProperty`). 
@@ -228,6 +228,8 @@ représentant les coordonnées des trois sommets d'un triangle.
 
 - Pour chacune des parties du calcul, vous utiliserez un object du type `NumberBinding`.
 
+Vous devrez aussi implémenter la méthode `printResult()` qui génère l'affichage correspondant au test du même nom.
+
 Comme pour les exercices précédents, vous devez activer les tests les uns après les autres et soumettre votre 
 solution après chaque itération du cycle principal du workflow. Une fois vos tests validés, prenez du temps pour 
 observer le comportement de la fonction `main()` à travers l'affichage sur la console. Comme vous pourrez le voir, la valeur de l'aire 
@@ -236,16 +238,18 @@ a bien été calculée automatiquement avant chaque affichage.
 #### Exercice 3 : Variante 1
 Dans cette variante, on vous demande de réaliser la même application mais en utilisant la Fluent API au lieu de la 
 classe `Bindings`.
+
 En outre, `printResult()` devra se contenter d'afficher la valeur d'une expression de type `StringExpression` nommée `output`, 
 qui doit être liée aux six coordonnées et à l'aire du triangle pour mettre à jour la chaîne à afficher.
-Rajoutez la création de ce binding dans la méthode `createBinding()`.
+Rajoutez la création de ce binding dans la méthode `createBinding()`. Pour cela, regardez les méthodes proposées par la classe `Bindings` dans la JavaDoc qui retournent une `StringExpression`. `Bindings.format()` pourrait par exemple être utilisé.
 Si besoin, vous pouvez utiliser des bindings intermédiaires, notamment pour supporter la valeur absolue dans la formule. 
 
 
 #### Exercice 3 : Variante 2 
-Dans cette seconde variante, on vous demande d'utiliser un *low-level binding* pour réaliser le calcul de l'aire. Il est possible 
-de définir une liaison de plus bas niveau en redéfinissant la méthode abstraite `computeValue()` d'une des classes de 
+Dans cette seconde variante, on vous demande d'utiliser un *low-level binding* pour réaliser le calcul de l'aire. Il est possible de définir une liaison de plus bas niveau en redéfinissant la méthode abstraite `computeValue()` d'une des classes de 
 binding (`DoubleBinding`, `BooleanBinding`, `StringBinding`, …).
+
+Un exemple est disponible dans la partie `Lier des propriétés` du [Cours 4](https://github.com/IUTInfoAix-M2105/CoursIHMJava/blob/gh-pages/cours4/slide_cours4.md).
 
 #### Exercice 4
 Comme on vient de le voir, les bindings permettent de lier des propriétés entre elles avec des relations plus ou moins 
