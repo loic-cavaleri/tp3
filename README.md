@@ -4,9 +4,9 @@
 
 * **Cours:** [M2105](http://cache.media.enseignementsup-recherche.gouv.fr/file/25/09/7/PPN_INFORMATIQUE_256097.pdf)
 * **Responsable:** [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr)
-* **Enseignants:** [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr), [Cyril Pain-Barre](mailto:cyril.pain-barre@univ-amu.fr)
+* **Enseignants:** [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr), [Petru Valicov](mailto:petru.valicov@univ-amu.fr), [Cyril Pain-Barre](mailto:cyril.pain-barre@univ-amu.fr)
 * **Besoin d'aide ?**
-    * La page [Piazza de ce cours](https://piazza.com/univ-amu.fr/spring2017/m2105/home).
+    * La page [Piazza de ce cours](https://piazza.com/univ-amu.fr/spring2018/m2105/home).
     * Consulter et/ou créér des [issues](https://github.com/IUTInfoAix-M2105/tp1/issues).
     * [Email](mailto:sebastien.nedjar@univ-amu.fr) pour une question d'ordre privée, ou pour convenir d'un rendez-vous physique.
 
@@ -93,40 +93,30 @@ Allez dans le paquetage `exercice1` et ouvrir la classe `PropertyExample`, puis 
 que sa valeur, qui aura été fixée à 1024.
 
 - Écrire avec une expression *lambda*, l'initialisation de la donnée membre `changeListener` qui est un écouteur de 
-changement de valeur. Cet écouteur se contente d'afficher le texte "The observableValue has changed:" suivi de l'ancienne et de la nouvelle valeur de l'objet 
+changement de valeur. Cet écouteur se contente d'afficher le texte `"The observableValue has changed:"` suivi de l'ancienne et de la nouvelle valeur de l'objet 
 observé.
 
 - Écrire avec une autre expression *lambda*, l'initialisation de la donnée membre `invalidationListener` qui est un écouteur d'invalidation de la valeur 
-d'une propriété. Cet écouteur se contente d'afficher le texte "The observable has been invalidated." pour indiquer qu'un événement d'invalidation 
+d'une propriété. Cet écouteur se contente d'afficher le texte `"The observable has been invalidated."` pour indiquer qu'un événement d'invalidation 
 s'est déclenché **sans pour autant afficher la valeur de l'objet observé**.
 
 - Écrire la méthode `addAndRemoveInvalidationListener()` dont les affichages serviront à comprendre le rôle d'un `InvalidationListener`.
  Cette méthode doit effectuer les actions suivantes :
-    - Afficher sur la console le texte "Add invalidation listener." puis ajouter l'objet `invalidationListener` comme écouteur de la propriété `anIntProperty`
-    
-    - Afficher le texte "setValue() with 1024." puis modifier la valeur de la propriété avec la méthode `setValue()` pour la fixer à 1024 (la même valeur qu'initialement afin d'observer le comportement de la propriété)
-    
-    - Afficher le texte "set() with 2105." puis modifier à nouveau la valeur de la propriété avec la méthode `set()` pour la fixer à 2105
-
-    - Afficher le texte "setValue() with 5012." puis modifier à nouveau la valeur de la propriété avec la méthode `setValue()` pour la fixer à 5012
-    
-    - Afficher le texte "Remove invalidation listener." puis supprimer l'écouteur de la propriété 
-    
-    - Afficher le texte "set() with 1024." puis modifier une dernière fois la valeur de la propriété avec la méthode `set()` pour la remettre à 1024
+    - Afficher sur la console le texte `"Add invalidation listener."` puis ajouter l'objet `invalidationListener` comme écouteur de la propriété `anIntProperty`
+    - Afficher le texte `"setValue() with 1024."` puis modifier la valeur de la propriété avec la méthode `setValue()` pour la fixer à 1024 (la même valeur qu'initialement afin d'observer le comportement de la propriété)
+    - Afficher le texte `"set() with 2105."` puis modifier à nouveau la valeur de la propriété avec la méthode `set()` pour la fixer à 2105
+    - Afficher le texte `"setValue() with 5012."` puis modifier à nouveau la valeur de la propriété avec la méthode `setValue()` pour la fixer à 5012
+    - Afficher le texte `"Remove invalidation listener."` puis supprimer l'écouteur de la propriété 
+    - Afficher le texte `"set() with 1024."` puis modifier une dernière fois la valeur de la propriété avec la méthode `set()` pour la remettre à 1024
 
 - Écrire la méthode `addAndRemoveChangeListener()` dont les affichages serviront à comprendre le rôle d'un `ChangeListener`. 
 Cette méthode doit effectuer les actions suivantes :
-    - Afficher sur la console le texte "Add change listener." puis ajouter l'objet `changeListener` comme écouteur de la propriété `anIntProperty`
-      
-    - Afficher le texte "setValue() with 1024." puis modifier la valeur de la propriété avec la méthode `setValue()` pour la fixer à 1024 (la même valeur qu'elle possède déjà afin d'observer le comportement de la propriété)
-    
-    - Afficher le texte "set() with 2105." puis modifier à nouveau la valeur de la propriété avec la méthode `set()` pour la fixer à 2105
-
-    - Afficher le texte "setValue() with 5012." puis modifier à nouveau la valeur de la propriété avec la méthode `setValue()` pour la fixer à 5012
-
-    - Afficher le texte "Remove change listener." puis supprimer l'écouteur de la propriété 
-       
-    - Afficher le texte "set() with 1024." puis modifier une dernière fois la valeur de la propriété avec la méthode `set()` pour la remettre à 1024
+    - Afficher sur la console le texte `"Add change listener."` puis ajouter l'objet `changeListener` comme écouteur de la propriété `anIntProperty`
+    - Afficher le texte `"setValue() with 1024."` puis modifier la valeur de la propriété avec la méthode `setValue()` pour la fixer à 1024 (la même valeur qu'elle possède déjà afin d'observer le comportement de la propriété)
+    - Afficher le texte `"set() with 2105."` puis modifier à nouveau la valeur de la propriété avec la méthode `set()` pour la fixer à 2105
+    - Afficher le texte `"setValue() with 5012."` puis modifier à nouveau la valeur de la propriété avec la méthode `setValue()` pour la fixer à 5012
+    - Afficher le texte `"Remove change listener."` puis supprimer l'écouteur de la propriété 
+    - Afficher le texte `"set() with 1024."` puis modifier une dernière fois la valeur de la propriété avec la méthode `set()` pour la remettre à 1024
   
 Comme pour les exercices précédents, vous devez activer les tests les uns après les autres et soumettre votre 
 solution après chaque itération du cycle principal du workflow.
@@ -189,7 +179,7 @@ observer le comportement de la fonction `bindAndUnbindOnePropertyToAnother()` à
 Parfois, une propriété dépend d'une autre mais avec une relation plus complexe. Il est ainsi possible de créer des 
 **propriétés calculées**.
 
-Deux techniques (dites de "haut-niveau") sont à disposition (elles peuvent être combinées) :
+Deux techniques (dites de *"haut-niveau"*) sont à disposition (elles peuvent être combinées) :
 
    - Utiliser la classe utilitaire `Bindings` qui possède de nombreuses méthodes statiques permettant d'effectuer des 
    opérations impliquant un ou plusieurs objets observables (dont les propriétés). Par exemple, `Bindings.multiply(unePropriete, autrePropriete)`.
@@ -508,7 +498,7 @@ Ouvrir maintenant la classe `SlowPong`  et l'implémenter en respectant les cons
 
 - Écrire la méthode `createPongPane()` qui va créer un objet `Pane` y placer les deux raquettes, la balle et le boutton *start*.
 
-- Écrire la méthode `createStartButton` qui va créer un objet `Button` avec le texte "Start!". Rajouter un écouteur pour 
+- Écrire la méthode `createStartButton` qui va créer un objet `Button` avec le texte `"Start!"`. Rajouter un écouteur pour 
 que lorsque le bouton est actionné, l'animation soit lancée. Asservir sa propriété `visible` à la propriété `startVisible` de notre application.
 
 - Écrire la méthode `createBindings()` qui initialise les expressions booléennes `isBouncingOffVerticalWall` et 
