@@ -1,18 +1,17 @@
 package fr.univ_amu.iut.exercice2;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 
 import java.io.PrintStream;
 
 import static org.mockito.Mockito.*;
 
+@Disabled
 public class PropertyExampleContinuedTest {
     private PrintStream out;
     private PropertyExampleContinued propertyExample;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         propertyExample = new PropertyExampleContinued();
         propertyExample.setAnInt(1024);
@@ -20,7 +19,7 @@ public class PropertyExampleContinuedTest {
         System.setOut(out);
     }
 
-    @Ignore
+    @Disabled
     @Test
     public void bindAndUnbindOnePropertyToAnother() throws Exception {
         propertyExample.bindAndUnbindOnePropertyToAnother();

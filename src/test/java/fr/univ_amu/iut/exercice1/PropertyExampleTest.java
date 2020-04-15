@@ -1,27 +1,29 @@
 package fr.univ_amu.iut.exercice1;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
+import org.mockito.Mock;
 
 import java.io.PrintStream;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.MockitoAnnotations.initMocks;
 
+@Disabled
 public class PropertyExampleTest {
-    private PrintStream out;
+
+    @Mock PrintStream out;
     private PropertyExample propertyExample;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
+        initMocks(this);
+        System.setOut(out);
         propertyExample = new PropertyExample();
         propertyExample.setAnInt(1024);
-        out = mock(PrintStream.class);
-        System.setOut(out);
     }
 
-    @Ignore
+    @Disabled
     @Test
     public void createProperty() throws Exception {
         propertyExample.createProperty();
@@ -32,7 +34,7 @@ public class PropertyExampleTest {
         verify(out).println("anIntProperty.getValue() = 1024");
     }
 
-    @Ignore
+    @Disabled
     @Test
     public void addAndRemoveInvalidationListener() throws Exception {
         PropertyExample propertyExample = new PropertyExample();
@@ -50,7 +52,7 @@ public class PropertyExampleTest {
         verify(out).println("set() with 1024.");
     }
 
-    @Ignore
+    @Disabled
     @Test
     public void addAndRemoveChangeListener() throws Exception {
 

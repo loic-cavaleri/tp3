@@ -1,20 +1,23 @@
 package fr.univ_amu.iut;
 
 import javafx.stage.Stage;
-import org.junit.Test;
-import org.testfx.framework.junit.ApplicationTest;
+import org.junit.jupiter.api.*;
+import org.testfx.framework.junit5.ApplicationTest;
 
 import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.util.NodeQueryUtils.hasText;
 
+@Disabled
 public class AppTest extends ApplicationTest {
 
+    @Disabled
     @Test
     public void should_initialize_button_with_text_click() {
         // then:
         verifyThat("#buttonClick", hasText("Click !"));
     }
 
+    @Disabled
     @Test
     public void should_increment_nbClick_when_click_on_button() {
         // when:
@@ -24,6 +27,7 @@ public class AppTest extends ApplicationTest {
         verifyThat("#buttonClick", hasText("1"));
     }
 
+    @Disabled
     @Test
     public void should_increment_nbClick_when_click_on_button_again() {
         // when:
