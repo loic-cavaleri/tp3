@@ -9,16 +9,15 @@
 * **Besoin d'aide ?**
     * La page [Piazza de ce cours](https://piazza.com/univ-amu.fr/spring2018/m2105/home).
     * Consulter et/ou créér des [issues](https://github.com/IUTInfoAix-M2105/tp1/issues).
-    * [Email](mailto:sebastien.nedjar@univ-amu.fr) pour une question d'ordre privée, ou pour convenir d'un rendez-vous physique.
+    * [Email](mailto:cyril.pain-barre@univ-amu.fr) pour une question d'ordre privée, ou pour convenir d'un rendez-vous physique.
 
 ## TP 3 :  Propriétés et Bindings [![Build Status](https://travis-ci.com/IUTInfoAix-M2105/tp3.svg?token=zPXgu159amQhEb4ShTxW)](https://travis-ci.com/IUTInfoAix-M2105/tp3)
 
-JavaFX 8.0 regroupe un ensemble d'API de Java 8 Standard Edition permettant le développement rapide d'applications 
-graphiques modernes (aussi bien que des jeux 3D !). JavaFX 8.0 est tellement riche que sa 
-[documentation](https://docs.oracle.com/javase/8/javafx/api/toc.htm) se trouve à part de celle de 
-[Java 8](https://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html) (qui inclut celle de ses prédécesseurs AWT et Swing), bien qu'il fasse partie intégrante de Java 8.
+JavaFX 11 regroupe un ensemble d'API permettant le développement rapide d'applications 
+graphiques modernes (aussi bien que des jeux 3D !). La [documentation](https://openjfx.io/javadoc/11/) de JavaFX 11 se trouve à part de celle de 
+[Java 11](https://docs.oracle.com/en/java/javase/11/docs/api/index.html) (qui inclut celle de ses prédécesseurs AWT et Swing).
 
-Ce TP explore les mécanismes clefs de JavaFX 8.0 : Les propriétés, les bindings.
+Ce TP explore les mécanismes clefs de JavaFX : Les propriétés, les bindings.
 
 #### Création de votre fork du TP
 
@@ -26,7 +25,7 @@ La première chose que vous allez faire est de créer un fork d'un dépôt. Pour
 
 [https://classroom.github.com/a/hh3u00mM](https://classroom.github.com/a/hh3u00mM) 
 
-Comme pour le TP1, GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-m2105/tp3' et s'appellant 'IUTInfoAix-m2105/tp3-votreUsername'. 
+Comme pour les précédents TP, GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-m2105/tp3' et s'appellant 'IUTInfoAix-m2105/tp3-votreUsername'. 
 Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail.
 
 Une fois votre fork créé, il vous suffit de l'importer dans IntelliJ.
@@ -48,7 +47,7 @@ Intérêt des propriétés :
 
 - Elles peuvent déclencher un événement lorsque leur valeur est modifiée et un gestionnaire d'événement (`Listener`) peut réagir en conséquence.
 
-- Elles peuvent être liées entre-elles (Binding), c.-à-d. que le changement d'une propriété entraîne automatiquement la mise à jour d'une autre.
+- Elles peuvent être liées entre-elles (Binding), c'est-à-dire que le changement d'une propriété entraîne automatiquement la mise à jour d'une autre.
 
 Pour simplifier la vie du développeur, la plateforme Java offre des classes permettant de créer de telles propriétés 
 facilement pour les types les plus courants (des types primitifs, les chaînes de caractères, certaines collections ainsi 
@@ -90,18 +89,18 @@ rubriques (*Property Summary*) la liste des propriétés de la classe concernée
 Cet exercice permet d'illustrer le rôle de ces deux types d'écouteurs.
 Allez dans le paquetage `exercice1` et ouvrir la classe `PropertyExample`, puis :
 
-- Écrire la méthode `createProperty()` qui va initialiser la donnée membre `anIntProperty` avec un `SimpleIntegerProperty`, puis afficher l'objet créé ainsi 
+- Écrivez la méthode `createProperty()` qui va initialiser la variable d'instance `anIntProperty` avec un `SimpleIntegerProperty`, puis afficher l'objet créé ainsi 
 que sa valeur, qui aura été fixée à 1024.
 
-- Écrire avec une expression *lambda*, l'initialisation de la donnée membre `changeListener` qui est un écouteur de 
+- Écrivez avec une expression *lambda*, l'initialisation de la variable d'instance `changeListener` qui est un écouteur de 
 changement de valeur. Cet écouteur se contente d'afficher le texte `"The observableValue has changed:"` suivi de l'ancienne et de la nouvelle valeur de l'objet 
 observé.
 
-- Écrire avec une autre expression *lambda*, l'initialisation de la donnée membre `invalidationListener` qui est un écouteur d'invalidation de la valeur 
+- Écrivez avec une autre expression *lambda*, l'initialisation de la variable d'instance `invalidationListener` qui est un écouteur d'invalidation de la valeur 
 d'une propriété. Cet écouteur se contente d'afficher le texte `"The observable has been invalidated."` pour indiquer qu'un événement d'invalidation 
 s'est déclenché **sans pour autant afficher la valeur de l'objet observé**.
 
-- Écrire la méthode `addAndRemoveInvalidationListener()` dont les affichages serviront à comprendre le rôle d'un `InvalidationListener`.
+- Écrivez la méthode `addAndRemoveInvalidationListener()` dont les affichages serviront à comprendre le rôle d'un `InvalidationListener`.
  Cette méthode doit effectuer les actions suivantes :
     - Afficher sur la console le texte `"Add invalidation listener."` puis ajouter l'objet `invalidationListener` comme écouteur de la propriété `anIntProperty`
     - Afficher le texte `"setValue() with 1024."` puis modifier la valeur de la propriété avec la méthode `setValue()` pour la fixer à 1024 (la même valeur qu'initialement afin d'observer le comportement de la propriété)
@@ -205,7 +204,7 @@ Un jeu d'opérations est disponible aussi bien avec la classe `Bindings` qu'avec
 - `when(cond).then(val1).otherwise(val2)` 
 
 - et beaucoup d'autres que l'on peut découvrir en parcourant la JavaDoc de la classe 
-[`Bindings`](https://docs.oracle.com/javase/8/javafx/api/javafx/beans/binding/Bindings.html).
+[`Bindings`](https://openjfx.io/javadoc/11/javafx.base/javafx/beans/binding/Bindings.html).
 
 Cet exercice illustre l'utilisation de multiples binding de haut niveau afin de mettre à jour automatiquement la valeur 
 de l'aire d'un triangle à partir des coordonnées de ses 3 sommets. 
@@ -240,7 +239,7 @@ Si besoin, vous pouvez utiliser des bindings intermédiaires, notamment pour sup
 Dans cette seconde variante, on vous demande d'utiliser un *low-level binding* pour réaliser le calcul de l'aire. Il est possible de définir une liaison de plus bas niveau en redéfinissant la méthode abstraite `computeValue()` d'une des classes de 
 binding (`DoubleBinding`, `BooleanBinding`, `StringBinding`, …).
 
-Un exemple est disponible dans la partie `Lier des propriétés` du [Cours 4](https://github.com/IUTInfoAix-M2105/CoursIHMJava/blob/gh-pages/cours4/slide_cours4.md).
+Un exemple est disponible dans la partie `Lier des propriétés` du [Cours 2](https://iutinfoaix-m2105.github.io/CoursIHMJava/cours2/#36).
 
 #### Exercice 4
 Comme on vient de le voir, les bindings permettent de lier des propriétés entre elles avec des relations plus ou moins 
@@ -293,7 +292,7 @@ première colonne.
  
 - Écrire la méthode `addArea()` qui ajoutera le champ de texte et son label pour afficher la valeur de l'aire.
 
-- Écrire la méthode `createBinding()` qui soumet chaque propriété représentant une coordonnée dans la donnée membre `triangleArea` au slider associé. Le champ de texte d'affichage 
+- Écrire la méthode `createBinding()` qui soumet chaque propriété représentant une coordonnée dans la variable d'instance `triangleArea` au slider associé. Le champ de texte d'affichage 
 de l'aire sera soumis à la valeur de la propriété `area` de `triangleArea`.
 
 Comme pour les exercices précédents, vous devez activer les tests les uns après les autres et soumettre votre 
@@ -320,7 +319,7 @@ suivantes :
 
 - La classe `TriangleAreaCalculatorAndDrawer` doit respecter les mêmes contraintes que la classe `TriangleAreaCalculator`.
 
-- La méthode `addDrawPane()` doit configurer la données membre `drawPane` pour qu'elle ait une taille de 500 par 500. L'échelle sera donc de 50/1.
+- La méthode `addDrawPane()` doit configurer la variable d'instance `drawPane` pour qu'elle ait une taille de 500 par 500. L'échelle sera donc de 50/1.
 Son arrière plan sera de couleur gris clair. Les trois côtés du triangles sont à ajouter à ce panneau. Ce panneau devra occuper toutes les colonnes de la dernière ligne du `GridPane`.
 
 - Le méthode `createBinding()` qui doit, en plus des bindings de l'exercice précédent, rajouter les liens entre les coordonnées du triangle 
@@ -426,24 +425,25 @@ Notre application finale devrait ressembler à cela :
 
 ![](src/main/resources/assets/BouncingBall.png)
 
-Pour ce faire, nous allons implémenter le comportement de la balle pratiquement qu'avec des bindings.
+Pour ce faire, nous n'allons implémenter le comportement de la balle pratiquement qu'avec des bindings.
 
 Dans le paquetage `exercice7`, ouvrir la classe `Ball` et l'implémenter en respectant les consignes suivantes :
 
-- Écrire le contructeur de la classe `Ball`. Il devra correctement initialiser les différentes données membres. 
+- Écrire le contructeur de la classe `Ball`. Il devra correctement initialiser les différentes variables d'instance. 
 Les propriétés `velocityX` et `velocityY` expriment la vitesse de la balle en pixel/nanoseconde sur les deux axes (X et Y).
 Initialisez-les avec une petite valeur, telles que 150E-9 et 100E-9.
 Ajouter 
 le cercle `ball` au panneau `parent`. L'initialisation des bindings sera déléguée à la méthode `createBindings()` qui 
 sera appelée en fin de constructeur.
 
-- Écrire la méthode `createBindings()` qui initialise tous les bindings entre les différentes propriétés de la classe. 
-La position et le rayon du cercle servant à materialiser la balle devront être correctement soumis aux données membres 
-correspondantes. Les expressions booléennes `isBouncingOffVerticalWall` et `isBouncingOffHorizontalWall` seront 
-soumises à la position de la balle et à la taille du panneau `parent`. Elles doivent indiquer si la balle a atteint un bord vertical ou horizontal. Regardez dans les méthodes de 
-`Bindings` celles qui concernent les booléens. Liez `bounceOffVerticalWall` et `bounceOffHorizontalWall` en 
-utilisant une construction du type `Bindings.when().then().otherwise()` et les expressions booléennes précédentes. 
-L'objectif de ces deux bindings est de mettre à jour correctement la vitesse de la balle à chaque instant si elle rebondit sur un bord.
+- Écrire la méthode `createBindings()` qui initialise tous les bindings entre les différentes propriétés de la classe.
+    - La position et le rayon du cercle servant à materialiser la balle devront être correctement soumis aux variables d'instance 
+correspondantes.
+
+    - Les expressions booléennes `isBouncingOffVerticalWall` et `isBouncingOffHorizontalWall` doivent indiquer si la balle a atteint un bord vertical ou horizontal. Elles seront soumises à la position de la balle et aux dimensions du panneau `parent`. Il faut donc comparer la position de la balle à la largeur ou à la hauteur du parent (au rayon près). Regardez dans les méthodes de 
+`Bindings` celles qui concernent les booléens.
+
+    - Les deux bindings `bounceOffVerticalWall` et `bounceOffHorizontalWall` permettront d'inverser le sens de la balle quand elle rebondit sur un bord. Liez-les, en utilisant une construction du type `Bindings.when().then().otherwise()`, aux expressions booléennes précédentes ainsi qu'à la vitesse de la balle (en "calculant" éventuellement son opposé si il y a rebondissement).
 
 - Écrire la méthode `move(long elapsedTimeInNanoseconds)` qui met à jour la vitesse (avec les bindings précédents) et la 
 position de la balle (en fonction du temps écoulé, de la position précédente et de la vitesse). Faites 
@@ -459,13 +459,13 @@ Notre application finale devrait devrait ressembler à :
 ![](src/main/resources/assets/pong.png)
 
 La première classe que nous allons implémenter est la classe `Paddle`. Cette classe **étend** la classe `Rectangle` à 
-laquelle on ajoute une propriété et des données membres pour interagir plus facilement à la souris. 
+laquelle on ajoute une propriété et des variables d'instance pour interagir plus facilement à la souris. 
 
 Sa propriété `paddleY`, du 
 type `DoubleProperty`, mémorise la position verticale de la raquette. 
-Sa donnée membre `initPaddleTranslateY` mémorise la position verticale de la raquette au moment où l'on presse sur le bouton 
-de la souris pour déplacer la raquette. Sa donnée membre `paddleDragAnchorY` mémorise la position de la souris par rapport 
-au coin de la scène. Ces deux données membres permettent à l'utilisateur de conserver le même décalage sur la raquette pendant 
+Sa variable d'instance `initPaddleTranslateY` mémorise la position verticale de la raquette au moment où l'on presse sur le bouton 
+de la souris pour déplacer la raquette. Sa variable d'instance `paddleDragAnchorY` mémorise la position de la souris par rapport 
+au coin de la scène. Ces deux variables d'instance permettent à l'utilisateur de conserver le même décalage sur la raquette pendant 
 tout le déplacement.
 
 Plutôt que de modifier directement les coordonnées de la raquette lorsque l'utilisateur la drag-and-drop, nous utiliserons la propriété `translateY` que tout noeud (`Node`) possède.
@@ -475,7 +475,7 @@ Dans le Paquetage `exercice8`, ouvrir la classe `Paddle` et l'implémenter en re
 - Dans le constructeur, configurer la raquette pour être un rectangle de 20 de largeur et de 50 de hauteur. Changer la 
 couleur de remplissage en bleu. Changer le curseur pour qu'une main fermée apparaisse quand on survole la raquette.
  
-- Ajouteur un écouteur d'évenement sur la propriété `OnMousePressed`. Cet écouteur doit mettre à jour les données membres 
+- Ajouteur un écouteur d'évenement sur la propriété `OnMousePressed`. Cet écouteur doit mettre à jour les variables d'instance 
 `initPaddleTranslateY` et `paddleDragAnchorY` avec, respectivement, la translation courante en Y du paddle, et la position en Y du clic. Ces informations sont utiles pour calculer le déplacement de la raquette que l'utilisateur souhaite effectuer quand il la drag-and-drop, puisque le drag-and-drop débute forcément par un clic sur la raquette.
 
 - Ajouter un écouteur d'événement sur la propriété `OnMouseDragged` qui modifie la valeur de la propriété `paddleY` 
