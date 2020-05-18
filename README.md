@@ -87,10 +87,15 @@ tous de nombreuses propriétés. Pour chacun des composants, la documentation (*
 rubriques (*Property Summary*) la liste des propriétés de la classe concernée ainsi que celles qui sont héritées.
 
 Cet exercice permet d'illustrer le rôle de ces deux types d'écouteurs.
-Allez dans le paquetage `exercice1` et ouvrir la classe `PropertyExample`, puis :
+Allez dans le(s) paquetage(s) `exercice1` (main et test) et ouvrir les classes `PropertyExample` et `PropertyExampleTest`.
 
-- Écrivez la méthode `createProperty()` qui va initialiser la variable d'instance `anIntProperty` avec un `SimpleIntegerProperty`, puis afficher l'objet créé ainsi 
-que sa valeur, qui aura été fixée à 1024.
+Comme pour les exercices précédents, vous devez activer les tests les uns après les autres et soumettre votre 
+solution après chaque itération du cycle principal du workflow.
+
+Au final, dans `PropertyExample` :
+
+- Écrivez la méthode `createProperty()` qui va initialiser la variable d'instance `anIntProperty` avec un `SimpleIntegerProperty`, et afficher une ligne vide puis l'objet créé ainsi 
+que sa valeur, qui aura été fixée à 1024. Se référer au test pour savoir quel affichage est précisément attendu.
 
 - Écrivez avec une expression *lambda*, l'initialisation de la variable d'instance `changeListener` qui est un écouteur de 
 changement de valeur. Cet écouteur se contente d'afficher le texte `"The observableValue has changed:"` suivi de l'ancienne et de la nouvelle valeur de l'objet 
@@ -102,6 +107,7 @@ s'est déclenché **sans pour autant afficher la valeur de l'objet observé**.
 
 - Écrivez la méthode `addAndRemoveInvalidationListener()` dont les affichages serviront à comprendre le rôle d'un `InvalidationListener`.
  Cette méthode doit effectuer les actions suivantes :
+    - Afficher sur la console une ligne vide
     - Afficher sur la console le texte `"Add invalidation listener."` puis ajouter l'objet `invalidationListener` comme écouteur de la propriété `anIntProperty`
     - Afficher le texte `"setValue() with 1024."` puis modifier la valeur de la propriété avec la méthode `setValue()` pour la fixer à 1024 (la même valeur qu'initialement afin d'observer le comportement de la propriété)
     - Afficher le texte `"set() with 2105."` puis modifier à nouveau la valeur de la propriété avec la méthode `set()` pour la fixer à 2105
@@ -111,6 +117,7 @@ s'est déclenché **sans pour autant afficher la valeur de l'objet observé**.
 
 - Écrire la méthode `addAndRemoveChangeListener()` dont les affichages serviront à comprendre le rôle d'un `ChangeListener`. 
 Cette méthode doit effectuer les actions suivantes :
+    - Afficher sur la console une ligne vide
     - Afficher sur la console le texte `"Add change listener."` puis ajouter l'objet `changeListener` comme écouteur de la propriété `anIntProperty`
     - Afficher le texte `"setValue() with 1024."` puis modifier la valeur de la propriété avec la méthode `setValue()` pour la fixer à 1024 (la même valeur qu'elle possède déjà afin d'observer le comportement de la propriété)
     - Afficher le texte `"set() with 2105."` puis modifier à nouveau la valeur de la propriété avec la méthode `set()` pour la fixer à 2105
@@ -118,8 +125,6 @@ Cette méthode doit effectuer les actions suivantes :
     - Afficher le texte `"Remove change listener."` puis supprimer l'écouteur de la propriété 
     - Afficher le texte `"set() with 1024."` puis modifier une dernière fois la valeur de la propriété avec la méthode `set()` pour la remettre à 1024
   
-Comme pour les exercices précédents, vous devez activer les tests les uns après les autres et soumettre votre 
-solution après chaque itération du cycle principal du workflow.
 
 Vous devriez remarquer que le premier `setValue()` est sans effet dans les deux cas, car la propriété est suffisamment intelligente pour s'apercevoir qu'il ne modifie pas sa valeur.
 Vous devriez aussi remarquer que l'`InvalidationListener` n'est averti que lors du premier changement effectif de valeur, à la différence du `ChangeListener` qui est systématiquement averti lorsque la valeur change. 
