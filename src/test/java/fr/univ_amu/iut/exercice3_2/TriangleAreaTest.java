@@ -63,4 +63,14 @@ public class TriangleAreaTest {
 
         verify(out).println("For P1(0,0), P2(6,0), P3(4,3), the area of triangle ABC is 9,0");
     }
+
+    @Disabled
+    @Test
+    public void areaPositive() throws Exception {
+        triangleArea.setP1(0, 0);
+        triangleArea.setP2(5, 5);
+        triangleArea.setP3(5, 0);
+        triangleArea.printResult();
+        verify(out).println("For P1(0,0), P2(5,5), P3(5,0), the area of triangle ABC is 12.5");
+    }
 }
