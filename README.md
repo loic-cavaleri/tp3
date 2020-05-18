@@ -242,7 +242,7 @@ Rajoutez la création de ce binding dans la méthode `createBinding()`. Pour cel
 Par exemple, la ligne :
 
 ```java
-  StringExpression output = Bindings.format("La valeur de %d/3 est %.1f", valProperty, valProperty.divide(3.0));
+StringExpression output = Bindings.format("La valeur de %d/3 est %.1f", valProperty, valProperty.divide(3.0));
 ```
 
 permet de créer une chaîne liée à la valeur d'une propriété entière (%d) et de sa division réelle par 3, avec une précision d'une décimale (%.1f).
@@ -335,7 +335,7 @@ suivantes :
 - La classe `TriangleAreaCalculatorAndDrawer` doit respecter les mêmes contraintes que la classe `TriangleAreaCalculator`.
 
 - La méthode `addDrawPane()` doit configurer la variable d'instance `drawPane` pour qu'elle ait une taille de 500 par 500. L'échelle sera donc de 50/1.
-Son arrière plan sera de couleur gris clair. Les trois côtés du triangles sont à ajouter à ce panneau. Ce panneau devra occuper toutes les colonnes de la dernière ligne du `GridPane`.
+Son arrière plan sera de couleur gris clair. Les trois côtés du triangle sont à ajouter à ce panneau. Ce panneau devra occuper toutes les colonnes de la dernière ligne du `GridPane`.
 
 - Le méthode `createBinding()` qui doit, en plus des bindings de l'exercice précédent, rajouter les liens entre les coordonnées du triangle 
 et les coordonnées des 3 segments `p1p2`, `p2p3` et `p3p1`. Ne pas oublier de respecter l'échelle dans le calcul des propriétés.
