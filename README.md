@@ -233,13 +233,21 @@ observer le comportement de la fonction `main()` à travers l'affichage sur la c
 a bien été calculée automatiquement avant chaque affichage.
 
 #### Exercice 3 : Variante 1
-Dans cette variante, on vous demande de réaliser la même application mais en utilisant la Fluent API au lieu de la 
-classe `Bindings`.
+Dans cette variante, on vous demande de réaliser la même application mais en utilisant autant que possible la Fluent API au lieu de la classe `Bindings`.
 
 En outre, `printResult()` devra se contenter d'afficher la valeur d'une expression de type `StringExpression` nommée `output`, 
 qui doit être liée aux six coordonnées et à l'aire du triangle pour mettre à jour la chaîne à afficher.
-Rajoutez la création de ce binding dans la méthode `createBinding()`. Pour cela, regardez les méthodes proposées par la classe `Bindings` dans la JavaDoc qui retournent une `StringExpression`. `Bindings.format()` pourrait par exemple être utilisé.
-Si besoin, vous pouvez utiliser des bindings intermédiaires, notamment pour supporter la valeur absolue dans la formule. 
+Rajoutez la création de ce binding dans la méthode `createBinding()`. Pour cela, regardez les méthodes proposées par la classe `Bindings` dans la JavaDoc qui retournent une `StringExpression`. `Bindings.format()` pourrait par exemple être utilisée. 
+
+Par exemple, la ligne :
+
+```java
+  StringExpression output = Bindings.format("La valeur de %d/3 est %.1f", valProperty, valProperty.divide(3.0));
+```
+
+permet de créer une chaîne liée à la valeur d'un entier (%d) et de sa division réelle par 3, avec une précision d'une décimale (%.1f).
+
+Si besoin, vous pouvez utiliser des bindings intermédiaires, et utiliser `Bindings` pour supporter la valeur absolue dans la formule. 
 
 
 #### Exercice 3 : Variante 2 
