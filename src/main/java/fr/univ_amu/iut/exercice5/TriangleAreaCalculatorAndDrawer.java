@@ -23,6 +23,10 @@ public class TriangleAreaCalculatorAndDrawer extends Application {
     private Slider y2Slider = new Slider();
     private Slider y3Slider = new Slider();
 
+    private Label p1Label = new Label("P1");
+    private Label p2Label = new Label("P2");
+    private Label p3Label = new Label("P3");
+
     private Label x1Label = new Label("X1 :");
     private Label x2Label = new Label("X2 :");
     private Label x3Label = new Label("X3 :");
