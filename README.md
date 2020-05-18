@@ -151,18 +151,18 @@ autre si le lien est unidirectionnel (`bind()`). Si l'on tente de modifier la va
 autre manière, une exception sera levée. 
 
 Allez dans le paquetage `exercice2` et ouvrir la classe `PropertyExampleContinued`, puis l'implémenter en respectant les 
-consignes suivantes :
+consignes suivantes (se référer aux tests pour les détails d'affichage) :
 
 - Écrire la méthode `bindAndUnbindOnePropertyToAnother()`. Cette méthode doit effectuer les actions suivantes :
-   - Déclarer une variable `otherProperty` du type `IntegerProperty` et l'instancier avec 0 comme valeur initiale.
+   - Déclarer une variable `otherProperty` du type `IntegerProperty` (classe abstraite) et lui affecter une instance de la classe concrète `SimpleIntegerProperty` contenant 0 comme valeur initiale.
    
    - Afficher la valeur de `otherProperty`
    
-   - Soumettre la valeur de `otherProperty` à celle de `anIntProperty`.
+   - Soumettre (lier unidirectionnellement) la valeur de `otherProperty` à celle de `anIntProperty`.
    
    - Afficher la valeur de `otherProperty`
    
-   - Modifier la valeur de la propriété `anIntProperty`
+   - Modifier la valeur de la propriété `anIntProperty` avec la valeur 7168
    
    - Afficher la valeur de `otherProperty`
    
@@ -170,7 +170,7 @@ consignes suivantes :
    
    - Afficher la valeur de `otherProperty`
    
-   - Modifier la valeur de la propriété `anIntProperty`
+   - Modifier la valeur de la propriété `anIntProperty` avec la valeur 8192
    
    - Afficher la valeur de `otherProperty`
    
