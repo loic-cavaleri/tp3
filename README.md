@@ -245,7 +245,7 @@ Par exemple, la ligne :
   StringExpression output = Bindings.format("La valeur de %d/3 est %.1f", valProperty, valProperty.divide(3.0));
 ```
 
-permet de créer une chaîne liée à la valeur d'un entier (%d) et de sa division réelle par 3, avec une précision d'une décimale (%.1f).
+permet de créer une chaîne liée à la valeur d'une propriété entière (%d) et de sa division réelle par 3, avec une précision d'une décimale (%.1f).
 
 Si besoin, vous pouvez utiliser des bindings intermédiaires, et utiliser `Bindings` pour supporter la valeur absolue dans la formule. 
 
