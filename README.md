@@ -221,7 +221,9 @@ représentant les coordonnées des trois sommets d'un triangle.
 
 - La formule à utiliser pour le calcul de l'aire est celle dite du déterminant : *|(x1\*y2 - x1\*y3 + x2\*y3 - x2\*y1 + x3\*y1 - x3\*y2)|/2*
 
-- Pour chacune des parties du calcul, vous utiliserez un object du type `NumberBinding`.
+- Pour chacune des parties du calcul, vous utiliserez un object du type `NumberBinding`
+
+- Attention à ne pas demander une division entière dans le calcul final ! Pour cela forcer la division par 2.0 (et non 2).
 
 Vous devrez aussi implémenter la méthode `printResult()` qui génère l'affichage correspondant au test du même nom.
 
