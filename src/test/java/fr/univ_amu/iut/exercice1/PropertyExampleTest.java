@@ -37,8 +37,6 @@ public class PropertyExampleTest {
     @Disabled
     @Test
     public void addAndRemoveInvalidationListener() throws Exception {
-        PropertyExample propertyExample = new PropertyExample();
-        propertyExample.setAnInt(1024);
 
         propertyExample.addAndRemoveInvalidationListener();
 
