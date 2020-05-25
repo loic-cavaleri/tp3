@@ -2,6 +2,7 @@ package fr.univ_amu.iut.exercice1;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.Property;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ChangeListener;
 
@@ -19,11 +20,24 @@ public class PropertyExample {
     }
 
     void createProperty() {
-        throw new RuntimeException("Not yet implemented !");
+
+        anIntProperty = new SimpleIntegerProperty(1024);
+
+        System.out.println();
+        System.out.println("anIntProperty = "+ anIntProperty);
+        System.out.println("anIntProperty.get() = " + anIntProperty.get());
+        System.out.println("anIntProperty.getValue() = "+ anIntProperty.getValue());
+
+        ChangeListener changelistener = ((observableValue, oldValue, newValue) ->{
+            System.out.println("The observableValue has changed: oldValue = "+ oldValue + ", newValue = "+ newValue);
+        } );
+
     }
 
     void addAndRemoveInvalidationListener() {
-        throw new RuntimeException("Not yet implemented !");
+
+        System.out.println();
+
     }
 
     void addAndRemoveChangeListener() {
