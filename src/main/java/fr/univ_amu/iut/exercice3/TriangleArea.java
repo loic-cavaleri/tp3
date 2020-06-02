@@ -1,6 +1,8 @@
 package fr.univ_amu.iut.exercice3;
 
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.NumberBinding;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -21,6 +23,8 @@ public class TriangleArea {
 
     public TriangleArea() {
         createBinding();
+
+
     }
 
     public static void main(String[] args) {
@@ -137,10 +141,34 @@ public class TriangleArea {
     }
 
     void printResult() {
-        throw new RuntimeException("Not yet implemented !");
+
+        System.out.println("For P1("+x1.get()+","+y1.get()+"), P2("+x2.get()+","+y2.get()+"), P3("+x3.get()+","+y3.get()+"), the area of triangle ABC is "+area.get());
     }
 
     private void createBinding() {
-        throw new RuntimeException("Not yet implemented !");
+
+
+        NumberBinding x1y2 = Bindings.multiply(x1,y2);
+        NumberBinding x1y3 = Bindings.multiply(x1,y3);
+        NumberBinding x2y3 = Bindings.multiply(x2,y3);
+        NumberBinding x2y1 = Bindings.multiply(x2,y1);
+        NumberBinding x3y1 = Bindings.multiply(x3,y1);
+        NumberBinding x3y2 = Bindings.multiply(x3,y2);
+        NumberBinding result =  (x1y2
+                .subtract(x1y3)
+                .add(x2y3)
+                .subtract(x2y1)
+                .add(x3y1)
+                .subtract(x3y2)
+                .divide(2.0));
+
+        area.bind(result);
+
+
+
+        area.bind(Bindings.when(result.lessThan(0))
+                .then(result.multiply(-1))
+                .otherwise(result));
+
     }
 }
