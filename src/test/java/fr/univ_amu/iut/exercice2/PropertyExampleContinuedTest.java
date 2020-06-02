@@ -6,7 +6,7 @@ import java.io.PrintStream;
 
 import static org.mockito.Mockito.*;
 
-@Disabled
+
 public class PropertyExampleContinuedTest {
     private PrintStream out;
     private PropertyExampleContinued propertyExample;
@@ -19,7 +19,7 @@ public class PropertyExampleContinuedTest {
         System.setOut(out);
     }
 
-    @Disabled
+
     @Test
     public void bindAndUnbindOnePropertyToAnother() throws Exception {
         propertyExample.bindAndUnbindOnePropertyToAnother();
